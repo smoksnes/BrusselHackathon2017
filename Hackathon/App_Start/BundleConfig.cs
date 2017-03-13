@@ -23,6 +23,7 @@ namespace Hackathon.Web
                 "~/Scripts/jquery-*",
                 "~/Scripts/angular.min.js",
                 "~/Scripts/angular-mocks*",
+                "~/Scripts/angular-touch*",
                 "~/Scripts/angular-animate*",
                 "~/Scripts/angular-aria*",
                 "~/Scripts/gestures.min.js",
