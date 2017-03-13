@@ -3,13 +3,19 @@
         <h2>Tell us a little bit about yourself</h2>
         <div class="row">
             <div class="input-field col s12">
-                <input placeholder="search your dream job" ng-model="ctrl.model.jobSearch" id="occupation" type="text" class="validate">
+                <input ng-model="ctrl.model.jobSearch" id="occupation" type="text" class="validate">
                 <label for="occupation">Search occupation</label>
+                <div class="center-align" ng-if="ctrl.searching">
+                    <div class="loading">
+                        <div class="outer"></div>
+                        <div class="inner"></div>
+                    </div>
+                </div>
                 <ul class="collection col s12" ng-if="ctrl.jobs.length > 0">
-                    <li class="collection-item" ng-repeat="job in ctrl.jobs">
+                    <li class="collection-item" ng-class="{ 'on-hover': ctrl.model.job != job}" ng-repeat="job in ctrl.jobs">
                         <div ng-click="ctrl.selectJob(job)">
+                            <span class="hover-item"><i class="material-icons green-text">done</i></span>
                             <span>{{job.title}}</span>
-                            <i class="material-icons">done</i>
                         </div>
                     </li>
                 </ul>

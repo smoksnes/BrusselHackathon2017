@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 namespace Hackathon.Web.Models
 {
@@ -31,7 +32,8 @@ namespace Hackathon.Web.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-2UTMK54;Initial Catalog=cedefop_presentation;Persist Security Info=False;Integrated Security=True;MultipleActiveResultSets=False;Connection Timeout=30;");
+            var connectionString = ConfigurationManager.ConnectionStrings["cedefop"];
+            optionsBuilder.UseSqlServer(connectionString.ConnectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

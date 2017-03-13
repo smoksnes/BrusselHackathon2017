@@ -3,6 +3,7 @@
     vm.show = true;
     vm.regions = ['Sweden', 'UK', 'Finland'];
     vm.showJobs = false;
+    vm.searching = false;
     vm.model =
         {
 
@@ -30,8 +31,9 @@
         function (newValue, oldValue) {
             console.log('value changed api.');
             vm.model.job = null;
-            if (!newValue) {
-                newValue = '';
+            if (!newValue || newValue === '') {
+                vm.jobs = [];
+                return;
             }
             if (vm.currentSearch) {
                 console.log('canceling old query.');
@@ -39,8 +41,10 @@
             }
             vm.currentSearch = $timeout(function () {
                 console.log('calling api.');
+                vm.searching = true;
                 occupationService.get(newValue).then(function (result) {
                     vm.jobs = result.data;
+                    vm.searching = false;
                 });
             }, 1000);
 
