@@ -23,15 +23,15 @@ namespace Hackathon.Web
                 "~/Scripts/angular.min.js",
                 "~/Scripts/angular-mocks*",
                 "~/Scripts/angular-animate*",
-                "~/Scripts/angular-aria*",
-                "~/Scripts/materialize/materialize.min.js"
+                "~/Scripts/angular-aria*"
+                //"~/Scripts/materialize/materialize.min.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/app").IncludeDirectory("~/Scripts/app", "*.js", true));
 
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/materialize/css/materialize*",
+                      //"~/Content/materialize/css/materialize*",
                       "~/Content/site.css"));
         }
     }
