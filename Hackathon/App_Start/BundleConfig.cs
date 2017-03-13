@@ -8,7 +8,8 @@ namespace Hackathon.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/hammer.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -23,15 +24,17 @@ namespace Hackathon.Web
                 "~/Scripts/angular.min.js",
                 "~/Scripts/angular-mocks*",
                 "~/Scripts/angular-animate*",
-                "~/Scripts/angular-aria*"
-                //"~/Scripts/materialize/materialize.min.js"
-                ));
+                "~/Scripts/angular-aria*",
+                "~/Scripts/gestures.min.js",
+                "~/Scripts/materialize.min.js",
+                "~/Scripts/angular-materialize.min.js"
+                )); 
 
             bundles.Add(new ScriptBundle("~/bundles/app").IncludeDirectory("~/Scripts/app", "*.js", true));
 
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      //"~/Content/materialize/css/materialize*",
+                      "~/Content/materialize/css/materialize.min.css",
                       "~/Content/site.css"));
         }
     }
