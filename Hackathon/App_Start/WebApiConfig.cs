@@ -12,6 +12,12 @@ namespace Hackathon.Web
             // Web API routes
             config.MapHttpAttributeRoutes();
 
+            UnityConfig.RegisterComponents();
+
+            var formatters = GlobalConfiguration.Configuration.Formatters;
+
+            formatters.Remove(formatters.XmlFormatter);
+
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             config.Formatters.JsonFormatter.UseDataContractJsonSerializer = false;
 

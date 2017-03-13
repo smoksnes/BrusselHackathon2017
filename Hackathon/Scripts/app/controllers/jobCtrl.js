@@ -1,4 +1,4 @@
-﻿angular.module('hackCtrls').controller('jobCtrl', ['$rootScope', '$scope', 'occupationService', function ($rootScope, $scope, occupationService) {
+﻿angular.module('hackCtrls').controller('jobCtrl', ['$rootScope', '$scope', '$timeout', 'occupationService', function ($rootScope, $scope, $timeout, occupationService) {
     var vm = this;
     vm.show = true;
     vm.regions = ['Sweden', 'UK', 'Finland'];
@@ -22,17 +22,29 @@
 
     vm.jobs = [];
 
+
+
     $scope.$watch(function () {
         return vm.model.jobSearch;
     },
         function (newValue, oldValue) {
+            console.log('value changed api.');
             vm.model.job = null;
             if (!newValue) {
                 newValue = '';
             }
+            if (vm.currentSearch) {
+                console.log('canceling old query.');
+                $timeout.cancel(vm.currentSearch);
+            }
+            vm.currentSearch = $timeout(function () {
+                console.log('calling api.');
+                occupationService.get(newValue).then(function (result) {
+                    vm.jobs = result.data;
+                });
+            }, 1000);
 
-            occupationService.get(newValue).then(function (result) {
-                vm.jobs = result.data;
-            });
+
+
         });
 }]);

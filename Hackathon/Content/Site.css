@@ -1,4 +1,16 @@
-﻿.card.horizontal .card-stacked.card-percentage-holder {
+﻿[animate-on-change] {
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+    [animate-on-change].changed {
+        background-color: red;
+        transition: none;
+        -webkit-transition: none;
+    }
+
+
+.card.horizontal .card-stacked.card-percentage-holder {
     text-align: center;
     flex: 0.6;
 }

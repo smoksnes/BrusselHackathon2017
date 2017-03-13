@@ -292,17 +292,18 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Api\JobVacanciesController.cs" />
+    <Compile Include="Models\SkillProfession.cs" />
     <Compile Include="Models\JobVacancy.cs" />
     <Compile Include="Models\JobForm.cs" />
     <Compile Include="Controllers\Api\SkillsController.cs" />
     <Compile Include="Controllers\Api\OccupationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Data\SqlContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Skill.cs" />
     <Compile Include="Models\Job.cs" />
+    <Compile Include="Models\SqlContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -384,6 +385,7 @@
     <Content Include="Scripts\angular-touch.min.js.map" />
     <None Include="Properties\PublishProfiles\hackathon2017swe - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\app\directives\animateOnChange.js" />
     <Content Include="Scripts\app\services\jobVacanciesService.js" />
     <Content Include="Scripts\app\services\skillsService.js" />
     <Content Include="Scripts\app\services\occupationService.js" />
@@ -420,6 +422,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
