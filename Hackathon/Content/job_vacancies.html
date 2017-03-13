@@ -1,5 +1,6 @@
 ﻿<div ng-controller="jobVacanciesCtrl as ctrl">
     <div ng-if="ctrl.show">
+        <h2>Take a look at what we found</h2>
         <div class="row">
             <div class="col s12 m6" ng-repeat="jobVacancy in ctrl.jobVacancies">
                 <div class="card horizontal">
@@ -19,13 +20,6 @@
                         </div>
                     </div>
                 </div>
-                <!--<div class="card blue-grey darken-1">
-                    <div class="card-content white-text">
-
-                    </div>
-                    <div class="card-action">
-                    </div>
-                </div>-->
             </div>
         </div>
     </div>
