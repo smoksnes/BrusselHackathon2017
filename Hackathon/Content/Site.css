@@ -1,4 +1,24 @@
-﻿.bounce {
+﻿.card.horizontal .card-stacked.card-percentage-holder {
+    text-align: center;
+    flex: 0.6;
+}
+
+.card-percentage-holder .card-action {
+    bottom: 0;
+    position: absolute;
+    margin: 0;
+    padding: 16px 0;
+    width: 100%;
+}
+
+.card-percentage-holder .card-percentage {
+    height: 50px;
+    line-height: 50px;
+    font-size: 50px;
+    padding: 10px 10px;
+}
+
+.bounce {
     position: absolute;
     margin: auto;
     top: 7px;
@@ -7,13 +27,13 @@
     right: 30px;
 }
 
-.bounce.bounce-left {
-    -webkit-animation: bounce-left 2s infinite ease-in-out;
-}
+    .bounce.bounce-left {
+        -webkit-animation: bounce-left 2s infinite ease-in-out;
+    }
 
-.bounce.bounce-right {
-    -webkit-animation: bounce-right 2s infinite ease-in-out;
-}
+    .bounce.bounce-right {
+        -webkit-animation: bounce-right 2s infinite ease-in-out;
+    }
 
 @-webkit-keyframes bounce-left {
     0%, 20%, 60%, 100% {

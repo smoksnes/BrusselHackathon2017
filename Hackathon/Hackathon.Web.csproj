@@ -291,6 +291,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Api\JobVacanciesController.cs" />
+    <Compile Include="Models\JobVacancy.cs" />
+    <Compile Include="Models\JobForm.cs" />
     <Compile Include="Controllers\Api\SkillsController.cs" />
     <Compile Include="Controllers\Api\OccupationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -308,7 +311,7 @@
     <Content Include="Content\materialize\css\materialize.min.css" />
     <Content Include="Content\materialize\font\material-design-icons\LICENSE.txt" />
     <Content Include="Content\materialize\font\material-design-icons\Material-Design-Icons.svg" />
-    <Content Include="Content\summary.html" />
+    <Content Include="Content\job_vacancies.html" />
     <Content Include="Content\selectSkills.html" />
     <Content Include="Content\userSettings.html" />
     <Content Include="favicon.ico" />
@@ -325,7 +328,7 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\app.js" />
-    <Content Include="Scripts\app\controllers\summaryCtrl.js" />
+    <Content Include="Scripts\app\controllers\jobVacanciesCtrl.js" />
     <Content Include="Scripts\app\controllers\skillCtrl.js" />
     <Content Include="Scripts\app\controllers\jobCtrl.js" />
     <Content Include="Scripts\app\controllers\mainCtrl.js" />
@@ -380,7 +383,9 @@
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular-touch.min.js.map" />
+    <None Include="Properties\PublishProfiles\hackathon2017swe - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\app\services\jobVacanciesService.js" />
     <Content Include="Scripts\app\services\skillsService.js" />
     <Content Include="Scripts\app\services\occupationService.js" />
     <Content Include="Scripts\gestures.min.js" />

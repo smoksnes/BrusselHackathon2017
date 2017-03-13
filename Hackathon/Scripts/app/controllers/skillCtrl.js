@@ -15,7 +15,7 @@
         vm.currentSkillIndex++;
         if (vm.skills.length === vm.currentSkillIndex) {
             // No more to show.
-            $rootScope.$broadcast('showSummary', vm.model);
+            $rootScope.$broadcast('showJobVacancies', vm.model);
             vm.show = false;
         }
         else {
