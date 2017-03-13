@@ -1,7 +1,8 @@
-﻿angular.module('hackCtrls').controller('jobCtrl', ['$scope', 'occupationService', function ($scope, occupationService) {
+﻿angular.module('hackCtrls').controller('jobCtrl', ['$rootScope', '$scope', 'occupationService', function ($rootScope, $scope, occupationService) {
     var vm = this;
+    vm.show = true;
     vm.regions = ['Sweden', 'UK', 'Finland'];
-
+    vm.showJobs = false;
     vm.model =
         {
 
@@ -12,6 +13,11 @@
     };
     vm.undoJob = function () {
         vm.model.job = null;
+    }
+
+    vm.startFindSkills = function () {
+        $rootScope.$broadcast('userSettingsSaved', vm.model);
+        vm.show = false;
     }
 
     vm.jobs = [];

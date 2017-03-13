@@ -3,11 +3,9 @@
 namespace Hackathon.Web.Models
 {
     [DataContract]
-    public class Job
+    public class Skill
     {
         [DataMember]
         public string Title { get; set; }
-        [DataMember]
-        public int Id { get; set; }
     }
 }
