@@ -3,11 +3,23 @@
 }
 
 <div class="row" ng-controller="mainCtrl">
-    <form class="col s12">
+    <form class="col s12" ng-controller="jobCtrl as ctrl">
         <div class="row">
-            <div class="input-field col s6">
-                <input placeholder="Country" id="country" type="text" class="validate">
-                <label for="country">Search country</label>
+            <div class="input-field col s12">
+                <input placeholder="search your dream job" ng-model="ctrl.model.jobSearch" id="occupation" type="text" class="validate">
+                <label for="occupation">Search occupation</label>
+                <ul class="collection col s12" ng-if="ctrl.jobs.length > 0">
+                    <li class="collection-item scale-transition" ng-repeat="job in ctrl.jobs" >
+                        <div ng-click="ctrl.selectJob(job)">
+                            <span>{{job.title}}</span>
+                            <i class="material-icons">done</i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="input-field col s12" ng-if="ctrl.model.job && !ctrl.model.age">
+                <input placeholder="Age" ng-model="ctrl.ageSelect" id="age" type="number" class="validate">
+                <label for="age">Age</label>
             </div>
         </div>
     </form>
