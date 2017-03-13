@@ -28,6 +28,6 @@
                 <label>Region</label>
             </div>
         </div>
-        <a class="btn waves-effect waves-light" ng-click="ctrl.startFindSkills()">Find my dream job</a>
+        <a ng-if="ctrl.model.job && ctrl.model.age && ctrl.model.region" class="btn waves-effect waves-light" ng-click="ctrl.startFindSkills()">Find my dream job</a>
     </form>
 </div>

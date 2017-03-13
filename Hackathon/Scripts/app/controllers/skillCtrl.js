@@ -4,21 +4,35 @@
     vm.skills = [];
     vm.currentSkill = {};
     vm.currentSkillIndex = 0;
+    vm.model = {};
 
     vm.yes = function () {
+        vm.model.skills.push(vm.currentSkill);
+        vm.showNextSkill();
+    }
+
+    vm.showNextSkill = function () {
         vm.currentSkillIndex++;
-        vm.currentSkill = vm.skills[vm.currentSkillIndex];
+        if (vm.skills.length === vm.currentSkillIndex) {
+            // No more to show.
+            $rootScope.$broadcast('showSummary', vm.model);
+            vm.show = false;
+        }
+        else {
+            vm.currentSkill = vm.skills[vm.currentSkillIndex];
+        }
     }
 
-    vm.no = function() {
-        
+    vm.no = function () {
+        vm.showNextSkill();
     }
 
-    $scope.$on('userSettingsSaved',
+    $scope.$on('showSkills',
         function (e, data) {
             vm.show = true;
-            skillsService.get(data.job.id).then(function(result) {
-                debugger;
+            skillsService.get(data.job.id).then(function (result) {
+                vm.model = result;
+                vm.model.skills = [];
                 vm.skills = result.data;
                 vm.currentSkill = vm.skills[vm.currentSkillIndex];
             });

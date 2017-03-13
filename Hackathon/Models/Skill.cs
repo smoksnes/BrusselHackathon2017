@@ -7,5 +7,7 @@ namespace Hackathon.Web.Models
     {
         [DataMember]
         public string Title { get; set; }
+        [DataMember]
+        public string Description { get; set; }
     }
 }

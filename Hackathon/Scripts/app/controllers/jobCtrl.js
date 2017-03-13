@@ -16,7 +16,7 @@
     }
 
     vm.startFindSkills = function () {
-        $rootScope.$broadcast('userSettingsSaved', vm.model);
+        $rootScope.$broadcast('showSkills', vm.model);
         vm.show = false;
     }
 
