@@ -1,6 +1,60 @@
-﻿[animate-on-change] {
-    transition: all 1s;
-    -webkit-transition: all 1s;
+﻿
+.fade-in {
+    -webkit-animation: 2s ease 0s normal forwards 1 fadein;
+    animation: 2s ease 0s normal forwards 1 fadein;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    66% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    66% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+    .fade-in.two-seconds {
+        animation-delay: 2s
+    }
+
+    .fade-in.four-seconds {
+        animation-delay: 4s;
+    }
+
+    .fade-in.five-seconds {
+        animation-delay: 5s;
+    }
+    .fade-in.six-seconds {
+        animation-delay: 6s;
+    }
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .swipe-area {
