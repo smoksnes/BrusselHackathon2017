@@ -17,7 +17,7 @@
             </div>
             <div class="row">
                 <div class="input-field col s12 m6 offset-m3">
-                    <input ng-model="ctrl.model.jobSearch" id="occupation" type="text" class="validate">
+                    <input autocomplete="off" ng-model="ctrl.model.jobSearch" id="occupation" type="text" class="validate">
                     <label for="occupation">What kind of job is it?</label>
                     <div class="center-align" ng-if="ctrl.searching">
                         <div class="loading">
@@ -38,7 +38,7 @@
                     </ul>
                 </div>
             </div>
-            <a ng-disabled="!ctrl.model.title && !ctrl.model.description" class="btn col s12 m6 offset-m3 waves-effect waves-light" ng-click="ctrl.createJob()">Next</a>
+            <a ng-disabled="!ctrl.model.title && !ctrl.model.description && ctrl.model.job" class="btn col s12 m6 offset-m3 waves-effect waves-light" ng-click="ctrl.createJob()">Next</a>
         </form>
     </div>
 </div>

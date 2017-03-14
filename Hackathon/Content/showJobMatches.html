@@ -12,6 +12,7 @@
             </div>
             <div id="list" class="col s12">
                 <div class="row">
+                    <p class="center" ng-if="ctrl.matches.length == 0">We didn't find any jobs that matched your skills.</p>
                     <div class="col s12 m6" ng-repeat="match in ctrl.matches">
                         <div class="card horizontal">
                             <div class="card-stacked card-percentage-holder" ng-class="{ 'green darken-2': match.matchPercentage >= 90, 'green': match.matchPercentage < 90 && match.matchPercentage >= 80, 'green lighten-2': match.matchPercentage < 80 && match.matchPercentage >= 70, 'green lighten-4': match.matchPercentage < 70 && match.matchPercentage >= 60, 'yellow': match.matchPercentage < 60 && match.matchPercentage >= 45, 'orange darken-1': match.matchPercentage < 45 && match.matchPercentage >= 30,  'red': match.matchPercentage < 30  }">
@@ -35,7 +36,20 @@
             </div>
             <div id="map" class="col s12">
                 <div class="row">
-                    <p>This is a map</p>
+                    <div class="col s12 m6">
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="responsive-img" src="/Content/images/map.png" />
+                                <span class="card-title"></span>
+                            </div>
+                            <div class="card-content">
+                                <p>
+                                    Maybe it's time to explore the world? Take a look at the map and zoom in on the vacancies that looks interesting.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
