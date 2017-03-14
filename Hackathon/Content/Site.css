@@ -3,6 +3,15 @@
     -webkit-transition: all 1s;
 }
 
+.swipe-area {
+    background-image: url(images/swipe.png);
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 40px 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .header {
     color: #ee6e73;
     font-weight: 300;
