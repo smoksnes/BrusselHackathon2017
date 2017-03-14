@@ -33,13 +33,13 @@
                 vm.jobs = [];
                 return;
             }
+            vm.searching = true;
             if (vm.currentSearch) {
                 console.log('canceling old query.');
                 $timeout.cancel(vm.currentSearch);
             }
             vm.currentSearch = $timeout(function () {
                 console.log('calling api.');
-                vm.searching = true;
                 occupationService.get(newValue).then(function (result) {
                     vm.jobs = result.data;
                     vm.searching = false;

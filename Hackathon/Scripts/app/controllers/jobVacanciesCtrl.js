@@ -6,7 +6,6 @@
 
     $scope.$on('showJobVacancies',
         function (e, data) {
-            debugger;
             vm.model = data;
             vm.show = true;
             jobVacanciesService.post(vm.model).then(function(result) {

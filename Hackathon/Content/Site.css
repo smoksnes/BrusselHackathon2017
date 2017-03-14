@@ -3,6 +3,11 @@
     -webkit-transition: all 1s;
 }
 
+.header {
+    color: #ee6e73;
+    font-weight: 300;
+}
+
 body {
     background: #fff; /* container background */
     padding: 12px;
