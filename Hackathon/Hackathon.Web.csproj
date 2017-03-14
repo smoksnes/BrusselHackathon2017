@@ -311,6 +311,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\showJob.html" />
     <Content Include="Content\createJob.html" />
     <Content Include="Content\intro.html" />
     <Content Include="Content\materialize.min.css" />
@@ -335,6 +336,7 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\controllers\showJobCtrl.js" />
     <Content Include="Scripts\app\controllers\createJobCtrl.js" />
     <Content Include="Scripts\app\controllers\introCtrl.js" />
     <Content Include="Scripts\app\controllers\jobVacanciesCtrl.js" />
