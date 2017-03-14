@@ -5,7 +5,6 @@
 
     $scope.$on('showJob',
         function (e, data) {
-            debugger;
             vm.show = true;
             vm.model = data;
         });
