@@ -13,6 +13,7 @@
     }
 
     vm.showNextSkill = function () {
+        debugger;
         vm.currentSkillIndex++;
         if (vm.skills.length === vm.currentSkillIndex) {
             // No more to show.

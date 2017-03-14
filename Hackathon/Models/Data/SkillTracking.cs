@@ -6,7 +6,6 @@ namespace Hackathon.Web.Models.Data
     {
         public int Id { get; set; }
         public int SkillId { get; set; }
-        public string Title { get; set; }
         public DateTime Date { get; set; }
         public float Latitude { get; set; }
         public float Longitude { get; set; }
