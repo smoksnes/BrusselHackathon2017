@@ -1,6 +1,11 @@
 ﻿angular.module('hackCtrls').controller('jobCtrl', ['$rootScope', '$scope', '$timeout', 'occupationService', function ($rootScope, $scope, $timeout, occupationService) {
     var vm = this;
-    vm.show = true;
+    vm.show = false;
+    $scope.$on('findJob',
+        function(e, data) {
+            vm.show = true;
+        });
+
     vm.regions = ['Sweden', 'UK', 'Finland'];
     vm.showJobs = false;
     vm.searching = false;
