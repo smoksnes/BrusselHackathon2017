@@ -291,6 +291,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Api\JobMatchesController.cs" />
     <Compile Include="Controllers\Api\JobVacanciesController.cs" />
     <Compile Include="Models\Data\Occupation.cs" />
     <Compile Include="Models\Data\Skill.cs" />
@@ -309,6 +310,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\createJob.html" />
+    <Content Include="Content\intro.html" />
     <Content Include="Content\materialize.min.css" />
     <Content Include="Content\materialize\css\materialize.min.css" />
     <Content Include="Content\materialize\font\material-design-icons\LICENSE.txt" />
@@ -330,6 +333,8 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\controllers\createJobCtrl.js" />
+    <Content Include="Scripts\app\controllers\introCtrl.js" />
     <Content Include="Scripts\app\controllers\jobVacanciesCtrl.js" />
     <Content Include="Scripts\app\controllers\skillCtrl.js" />
     <Content Include="Scripts\app\controllers\jobCtrl.js" />
@@ -388,7 +393,7 @@
     <None Include="Properties\PublishProfiles\hackathon2017swe - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\app\directives\animateOnChange.js" />
-    <Content Include="Scripts\app\services\jobVacanciesService.js" />
+    <Content Include="Scripts\app\services\jobMatchesService.js" />
     <Content Include="Scripts\app\services\skillsService.js" />
     <Content Include="Scripts\app\services\occupationService.js" />
     <Content Include="Scripts\gestures.min.js" />

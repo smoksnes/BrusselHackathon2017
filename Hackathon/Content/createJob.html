@@ -1,6 +1,20 @@
 ﻿<div ng-controller="createJobCtrl as ctrl">
     <div ng-if="ctrl.show">
         <h2 class="header">Create a job</h2>
-        
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input ng-model="ctrl.model.title" id="title" type="text" class="validate">
+                    <label for="title">Job title</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input ng-model="ctrl.model.description" id="description" type="text" class="validate">
+                    <label for="description">Description</label>
+                </div>
+            </div>
+            <a ng-disabled="!ctrl.model.title && !ctrl.model.description" class="btn col s12 waves-effect waves-light" ng-click="ctrl.createJob()">Next</a>
+        </form>
     </div>
 </div>

@@ -1,4 +1,4 @@
-﻿angular.module('hackCtrls').controller('jobVacanciesCtrl', ['$rootScope', '$scope', 'jobVacanciesService', function ($rootScope, $scope, jobVacanciesService) {
+﻿angular.module('hackCtrls').controller('jobVacanciesCtrl', ['$rootScope', '$scope', 'jobMatchesService', function ($rootScope, $scope, jobMatchesService) {
     var vm = this;
     vm.model = {};
     vm.show = false;
@@ -8,7 +8,7 @@
         function (e, data) {
             vm.model = data;
             vm.show = true;
-            jobVacanciesService.post(vm.model).then(function(result) {
+            jobMatchesService.post(vm.model).then(function(result) {
                 vm.jobVacancies = result.data;
             });
         });
