@@ -1,12 +1,12 @@
 ﻿using System.Configuration;
 using Microsoft.EntityFrameworkCore;
 
-namespace Hackathon.Web.Models
+namespace Hackathon.Web.Models.Data
 {
     public partial class SqlContext : DbContext
     {
-
         public DbSet<SkillProfession> SkillProfessions { get; set; }
+        public DbSet<SkillTracking> SkillTrackings { get; set; }
         // Unable to generate entity type for table 'dbo.ft_skill_profession_cz'. Please see the warning messages.
         // Unable to generate entity type for table 'dbo.out1'. Please see the warning messages.
         // Unable to generate entity type for table 'dbo.ft_skill_profession_de'. Please see the warning messages.
@@ -32,7 +32,7 @@ namespace Hackathon.Web.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["cedefop"];
+            var connectionString = ConfigurationManager.ConnectionStrings["azureSql"];
             optionsBuilder.UseSqlServer(connectionString.ConnectionString);
         }
 
@@ -41,6 +41,9 @@ namespace Hackathon.Web.Models
             modelBuilder.Entity<SkillProfession>()
                 .ToTable("ft_skill_profession_en")
                 .HasKey(x => x.GeneralId);
+
+            modelBuilder.Entity<SkillTracking>()
+                .ToTable("skill_tracking");
         }
     }
 }

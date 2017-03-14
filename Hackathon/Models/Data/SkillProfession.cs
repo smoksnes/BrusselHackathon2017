@@ -1,4 +1,4 @@
-﻿namespace Hackathon.Web.Models
+﻿namespace Hackathon.Web.Models.Data
 {
     public class SkillProfession
     {

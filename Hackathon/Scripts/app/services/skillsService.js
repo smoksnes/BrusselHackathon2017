@@ -5,4 +5,8 @@
         var url = baseUrl + jobId;
         return $http.get(url);
     }
+    service.post = function (model) {
+        var url = baseUrl;
+        return $http.post(url, model);
+    }
 }]);

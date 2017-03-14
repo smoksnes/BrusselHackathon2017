@@ -8,6 +8,7 @@
 
     vm.yes = function () {
         vm.model.skills.push(vm.currentSkill);
+        skillsService.post({ id: vm.currentSkill.id, title: vm.currentSkill.name, gotSkill: true });
         vm.showNextSkill();
     }
 
@@ -24,6 +25,7 @@
     }
 
     vm.no = function () {
+        skillsService.post({ id: vm.currentSkill.id, title: vm.currentSkill.name, gotSkill: false });
         vm.showNextSkill();
     }
 

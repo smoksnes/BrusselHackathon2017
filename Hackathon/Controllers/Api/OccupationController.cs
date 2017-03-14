@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Web.Http;
 using Hackathon.Web.Models;
+using Hackathon.Web.Models.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace Hackathon.Web.Controllers.Api
@@ -57,6 +58,7 @@ namespace Hackathon.Web.Controllers.Api
         [HttpGet]
         public async Task<IHttpActionResult> Get(string title)
         {
+            return Ok(_jobs);
             var query =
                  _dbContext.SkillProfessions
                     .Where(x => x.Esco_Level_4.Contains(title))

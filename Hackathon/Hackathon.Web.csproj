@@ -292,7 +292,8 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Api\JobVacanciesController.cs" />
-    <Compile Include="Models\SkillProfession.cs" />
+    <Compile Include="Models\Data\SkillProfession.cs" />
+    <Compile Include="Models\Data\SkillTracking.cs" />
     <Compile Include="Models\JobVacancy.cs" />
     <Compile Include="Models\JobForm.cs" />
     <Compile Include="Controllers\Api\SkillsController.cs" />
@@ -303,7 +304,7 @@
     </Compile>
     <Compile Include="Models\Skill.cs" />
     <Compile Include="Models\Job.cs" />
-    <Compile Include="Models\SqlContext.cs" />
+    <Compile Include="Models\Data\SqlContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
