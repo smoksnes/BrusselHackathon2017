@@ -1,47 +1,28 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Http;
 using Hackathon.Web.Models;
+using Hackathon.Web.Models.Data;
 
 namespace Hackathon.Web.Controllers.Api
 {
-    [RoutePrefix("api/jobVacancies")]
+    [RoutePrefix("api/jobvacancies")]
     public class JobVacanciesController : ApiController
     {
-        private readonly JobVacancy[] _jobs = new[]
-        {
-            new JobVacancy()
-            {
-                Title = "Job 1",
-                MatchPercentage = 45
-            },
-            new JobVacancy()
-            {
-                Title = "Job 2",
-                MatchPercentage = 13
+        private readonly SqlContext _dbContext;
 
-            },
-            new JobVacancy()
-            {
-                Title = "Job 3",
-                MatchPercentage = 98
-            },
-            new JobVacancy()
-            {
-                Title = "Job 4",
-                MatchPercentage = 14
-            },
-            new JobVacancy()
-            {
-                Title = "Job 5",
-                MatchPercentage = 87
-            },
-        };
+        public JobVacanciesController(SqlContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
 
         [Route("")]
         [HttpPost]
-        public IHttpActionResult Post(JobForm form)
+        public async Task<IHttpActionResult> Post(JobVacancy job)
         {
-            return Ok(_jobs.OrderByDescending(x => x.MatchPercentage));
+            await _dbContext.AddAsync(job);
+            await _dbContext.SaveChangesAsync();
+            return Ok(job);
         }
     }
 }

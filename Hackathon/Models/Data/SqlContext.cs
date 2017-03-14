@@ -6,6 +6,7 @@ namespace Hackathon.Web.Models.Data
     public partial class SqlContext : DbContext
     {
         public DbSet<Occupation> Occupations { get; set; }
+        public DbSet<JobVacancy> JobVacancies { get; set; }
         public DbSet<Skill> Skills { get; set; }
         public DbSet<GenericSkill> GenericSkills { get; set; }
         public DbSet<SkillTracking> SkillTrackings { get; set; }
@@ -42,6 +43,10 @@ namespace Hackathon.Web.Models.Data
         {
             modelBuilder.Entity<Occupation>()
                 .ToTable("swe.occupations")
+                .HasKey(x => x.Id);
+
+            modelBuilder.Entity<JobVacancy>()
+                .ToTable("swe.job_vacancies")
                 .HasKey(x => x.Id);
 
             modelBuilder.Entity<SkillTracking>()

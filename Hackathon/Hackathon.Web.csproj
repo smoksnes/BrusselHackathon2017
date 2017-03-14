@@ -293,11 +293,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Api\JobMatchesController.cs" />
     <Compile Include="Controllers\Api\JobVacanciesController.cs" />
+    <Compile Include="Models\Data\JobVacancy.cs" />
     <Compile Include="Models\Data\Occupation.cs" />
     <Compile Include="Models\Data\Skill.cs" />
     <Compile Include="Models\Data\SkillProfession.cs" />
     <Compile Include="Models\Data\SkillTracking.cs" />
-    <Compile Include="Models\JobVacancy.cs" />
+    <Compile Include="Models\JobMatch.cs" />
     <Compile Include="Models\JobForm.cs" />
     <Compile Include="Controllers\Api\SkillsController.cs" />
     <Compile Include="Controllers\Api\OccupationController.cs" />
@@ -393,6 +394,7 @@
     <None Include="Properties\PublishProfiles\hackathon2017swe - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\app\directives\animateOnChange.js" />
+    <Content Include="Scripts\app\services\jobVacanciesService.js" />
     <Content Include="Scripts\app\services\jobMatchesService.js" />
     <Content Include="Scripts\app\services\skillsService.js" />
     <Content Include="Scripts\app\services\occupationService.js" />

@@ -7,30 +7,30 @@ namespace Hackathon.Web.Controllers.Api
     [RoutePrefix("api/jobmatches")]
     public class JobMatchesController : ApiController
     {
-        private readonly JobVacancy[] _jobs = new[]
+        private readonly JobMatch[] _jobs = new[]
         {
-            new JobVacancy()
+            new JobMatch()
             {
                 Title = "Job 1",
                 MatchPercentage = 45
             },
-            new JobVacancy()
+            new JobMatch()
             {
                 Title = "Job 2",
                 MatchPercentage = 13
 
             },
-            new JobVacancy()
+            new JobMatch()
             {
                 Title = "Job 3",
                 MatchPercentage = 98
             },
-            new JobVacancy()
+            new JobMatch()
             {
                 Title = "Job 4",
                 MatchPercentage = 14
             },
-            new JobVacancy()
+            new JobMatch()
             {
                 Title = "Job 5",
                 MatchPercentage = 87
