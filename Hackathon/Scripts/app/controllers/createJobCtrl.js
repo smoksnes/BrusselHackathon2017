@@ -21,7 +21,8 @@
 
     vm.createJob = function() {
         jobVacanciesService.post(vm.model).then(function(result) {
-            debugger;
+            $rootScope.$broadcast('addSkillsToJob', result.data);
+            vm.show = false;
         });
     }
 

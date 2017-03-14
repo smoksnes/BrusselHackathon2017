@@ -24,5 +24,19 @@ namespace Hackathon.Web.Controllers.Api
             await _dbContext.SaveChangesAsync();
             return Ok(job);
         }
+
+        [Route("{jobId:int}/{skillId:int}")]
+        [HttpPost]
+        public async Task<IHttpActionResult> Post(int jobId, int skillId)
+        {
+            var jobVacancySkill = new JobVacancySkill
+            {
+                JobVancancyId = jobId,
+                SkillId = skillId
+            };
+            await _dbContext.AddAsync(jobVacancySkill);
+            await _dbContext.SaveChangesAsync();
+            return Ok();
+        }
     }
 }

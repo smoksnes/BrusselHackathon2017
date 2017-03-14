@@ -4,4 +4,8 @@
     service.post = function (model) {
         return $http.post(baseUrl, model);
     }
+    service.addSkillToJob = function (jobId, skillId) {
+        var url = baseUrl + jobId + '/' + skillId;
+        return $http.post(url);
+    }
 }]);

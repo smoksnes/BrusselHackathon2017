@@ -1,0 +1,22 @@
+﻿<div ng-controller="showJobCtrl as ctrl">
+    <div ng-if="ctrl.show">
+        <h2 class="header">Your vacancy summary</h2>
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">{{ctrl.model.title}}s</span>
+                        <p>
+                            {{ctrl.model.description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="header">Required skills</h2>
+        <ul>
+            <li ng-repeat="skill in ctrl.model.skills">{{skill.title}}</li>
+        </ul>
+        <a class="btn col s12 waves-effect waves-light" ng-click="ctrl.startFindSkills()">Find the perfect employee</a>
+    </div>
+</div>

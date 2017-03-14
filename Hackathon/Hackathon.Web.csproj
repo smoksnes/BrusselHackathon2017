@@ -293,6 +293,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Api\JobMatchesController.cs" />
     <Compile Include="Controllers\Api\JobVacanciesController.cs" />
+    <Compile Include="Models\Data\JobVacancySkill.cs" />
     <Compile Include="Models\Data\JobVacancy.cs" />
     <Compile Include="Models\Data\Occupation.cs" />
     <Compile Include="Models\Data\Skill.cs" />
@@ -306,7 +307,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Job.cs" />
     <Compile Include="Models\Data\SqlContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -318,6 +318,7 @@
     <Content Include="Content\materialize\font\material-design-icons\LICENSE.txt" />
     <Content Include="Content\materialize\font\material-design-icons\Material-Design-Icons.svg" />
     <Content Include="Content\job_vacancies.html" />
+    <Content Include="Content\addSkillsToJob.html" />
     <Content Include="Content\selectSkills.html" />
     <Content Include="Content\userSettings.html" />
     <Content Include="favicon.ico" />
@@ -337,6 +338,7 @@
     <Content Include="Scripts\app\controllers\createJobCtrl.js" />
     <Content Include="Scripts\app\controllers\introCtrl.js" />
     <Content Include="Scripts\app\controllers\jobVacanciesCtrl.js" />
+    <Content Include="Scripts\app\controllers\addSkillsToJobCtrl.js" />
     <Content Include="Scripts\app\controllers\skillCtrl.js" />
     <Content Include="Scripts\app\controllers\jobCtrl.js" />
     <Content Include="Scripts\app\controllers\mainCtrl.js" />

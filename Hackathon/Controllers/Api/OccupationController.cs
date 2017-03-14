@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
-using Hackathon.Web.Models;
 using Hackathon.Web.Models.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,30 +15,6 @@ namespace Hackathon.Web.Controllers.Api
         {
             _dbContext = dbContext;
         }
-
-        private Job[] _jobs = new[]
-        {
-            new Job()
-            {
-                Title = "Job 1"
-            },
-            new Job()
-            {
-                Title = "Job 2"
-            },
-            new Job()
-            {
-                Title = "Job 3"
-            },
-            new Job()
-            {
-                Title = "Job 4"
-            },
-            new Job()
-            {
-                Title = "Job 5"
-            },
-        };
 
         [Route("")]
         [HttpGet]
