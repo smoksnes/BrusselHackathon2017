@@ -23,7 +23,7 @@ namespace Hackathon.Web.Controllers.Api
         [HttpGet]
         public async Task<IHttpActionResult> Get(int isco)
         {
-            var skills = await _dbContext.Skills.Where(x => x.Isco == isco).Take(10).ToListAsync();
+            var skills = await _dbContext.Skills.Where(x => x.Isco == isco && x.ReUseLevel == "E").Take(10).ToListAsync();
             return Ok(skills);
         }
 

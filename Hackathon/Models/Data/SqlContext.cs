@@ -28,9 +28,11 @@ namespace Hackathon.Web.Models.Data
                 .ToTable("swe.job_vancancies_skills")
                 .HasKey(x => new { x.JobVancancyId, x.SkillId });
 
+
             modelBuilder.Entity<JobVacancy>()
                 .ToTable("swe.job_vacancies")
-                .HasKey(x => x.Id);
+                .HasMany(x => x.JobVacancySkills).WithOne(x => x.JobVacancy).HasForeignKey(x => x.JobVancancyId);
+
 
             modelBuilder.Entity<SkillTracking>()
                 .ToTable("swe.skill_tracking")
@@ -38,7 +40,8 @@ namespace Hackathon.Web.Models.Data
 
             modelBuilder.Entity<Skill>()
                 .ToTable("swe.skills")
-                .HasKey(x => x.Id);
+                                .HasMany(x => x.JobVacancySkills).WithOne(x => x.Skill).HasForeignKey(x => x.SkillId);
+
 
             modelBuilder.Entity<GenericSkill>()
                 .ToTable("swe.generic_skills")

@@ -16,7 +16,7 @@
         vm.currentSkillIndex++;
         if (vm.skills.length === vm.currentSkillIndex) {
             // No more to show.
-            $rootScope.$broadcast('showJobVacancies', vm.model);
+            $rootScope.$broadcast('showJobMatches', vm.model);
             vm.show = false;
         }
         else {
@@ -33,7 +33,7 @@
         function (e, data) {
             vm.show = true;
             skillsService.get(data.job.isco).then(function (result) {
-                vm.model = result;
+                vm.model = data;
                 vm.model.skills = [];
                 vm.skills = result.data;
                 vm.currentSkill = vm.skills[vm.currentSkillIndex];

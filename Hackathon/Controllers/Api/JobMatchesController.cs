@@ -1,47 +1,60 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Http;
 using Hackathon.Web.Models;
+using Hackathon.Web.Models.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Hackathon.Web.Controllers.Api
 {
     [RoutePrefix("api/jobmatches")]
     public class JobMatchesController : ApiController
     {
-        private readonly JobMatch[] _jobs = new[]
+        private readonly SqlContext _dbContext;
+
+        public JobMatchesController(SqlContext dbContext)
         {
-            new JobMatch()
-            {
-                Title = "Job 1",
-                MatchPercentage = 45
-            },
-            new JobMatch()
-            {
-                Title = "Job 2",
-                MatchPercentage = 13
-
-            },
-            new JobMatch()
-            {
-                Title = "Job 3",
-                MatchPercentage = 98
-            },
-            new JobMatch()
-            {
-                Title = "Job 4",
-                MatchPercentage = 14
-            },
-            new JobMatch()
-            {
-                Title = "Job 5",
-                MatchPercentage = 87
-            },
-        };
-
+            _dbContext = dbContext;
+        }
         [Route("")]
         [HttpPost]
-        public IHttpActionResult Post(JobForm form)
+        public async Task<IHttpActionResult> Post(JobMatchForm form)
         {
-            return Ok(_jobs.OrderByDescending(x => x.MatchPercentage));
+            //var jobMatches = from jv in _dbContext.JobVacancies
+            //                 join jvs in _dbContext.JobVacancySkills on jv.Id equals jvs.JobVancancyId
+            //                 where jv.Isco == form.Isco
+            //                 //group jvs by jvs.JobVancancyId into grouped
+            //                 //select new { Id = grouped.Key, Skills = j.ToList(), Count = j. };
+            //                 select new {jv.Title, jv.Description, jv.Isco, jvs.SkillId, jv.Id };
+
+            //var result = await jobMatches.ToListAsync();
+            //result.GroupBy(x => new {x.Id, x.Title, x.Description}).Select(x => new JobMatch(){Id = x.Key.Id, Title = x.Key.Title, Description = x.Key.Description, Skills = x.})
+
+            var result = await _dbContext.JobVacancies.Include(x => x.JobVacancySkills).Where(x => x.Isco == form.Isco).ToListAsync();
+            var matches = new List<JobMatch>();
+            foreach (var job in result)
+            {
+                double percentage = (double)job.JobVacancySkills.Count(x => form.Skills.Contains(x.SkillId)) /
+                                 (double)job.JobVacancySkills.Count;
+                var match = new JobMatch()
+                {
+                    Title = job.Title,
+                    Description = job.Description,
+                    Id = job.Id,
+                    MatchPercentage = (int)Math.Round(percentage * 100)
+                };
+                matches.Add(match);
+            }
+
+            return Ok(matches.OrderByDescending(x => x.MatchPercentage));
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            _dbContext.Dispose();
         }
     }
 }

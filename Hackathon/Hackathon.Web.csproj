@@ -300,7 +300,7 @@
     <Compile Include="Models\Data\SkillProfession.cs" />
     <Compile Include="Models\Data\SkillTracking.cs" />
     <Compile Include="Models\JobMatch.cs" />
-    <Compile Include="Models\JobForm.cs" />
+    <Compile Include="Models\JobMatchForm.cs" />
     <Compile Include="Controllers\Api\SkillsController.cs" />
     <Compile Include="Controllers\Api\OccupationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -318,7 +318,7 @@
     <Content Include="Content\materialize\css\materialize.min.css" />
     <Content Include="Content\materialize\font\material-design-icons\LICENSE.txt" />
     <Content Include="Content\materialize\font\material-design-icons\Material-Design-Icons.svg" />
-    <Content Include="Content\job_vacancies.html" />
+    <Content Include="Content\showJobMatches.html" />
     <Content Include="Content\addSkillsToJob.html" />
     <Content Include="Content\selectSkills.html" />
     <Content Include="Content\userSettings.html" />
@@ -339,7 +339,7 @@
     <Content Include="Scripts\app\controllers\showJobCtrl.js" />
     <Content Include="Scripts\app\controllers\createJobCtrl.js" />
     <Content Include="Scripts\app\controllers\introCtrl.js" />
-    <Content Include="Scripts\app\controllers\jobVacanciesCtrl.js" />
+    <Content Include="Scripts\app\controllers\showJobMatchesCtrl.js" />
     <Content Include="Scripts\app\controllers\addSkillsToJobCtrl.js" />
     <Content Include="Scripts\app\controllers\skillCtrl.js" />
     <Content Include="Scripts\app\controllers\jobCtrl.js" />
