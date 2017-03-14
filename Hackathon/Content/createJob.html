@@ -4,19 +4,19 @@
         <p class="grey-text center text-darken-3 lighten-3">Describe your vacancy and we will find your perfect match.</p>
         <form class="col s12">
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s12 m6 offset-m3">
                     <input ng-model="ctrl.model.title" id="title" type="text" class="validate">
                     <label for="title">Job title</label>
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s12 m6 offset-m3">
                     <input ng-model="ctrl.model.description" id="description" type="text" class="validate">
                     <label for="description">Description</label>
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s12 m6 offset-m3">
                     <input ng-model="ctrl.model.jobSearch" id="occupation" type="text" class="validate">
                     <label for="occupation">What kind of work is it?</label>
                     <div class="center-align" ng-if="ctrl.searching">
@@ -38,7 +38,7 @@
                     </ul>
                 </div>
             </div>
-            <a ng-disabled="!ctrl.model.title && !ctrl.model.description" class="btn col s12 waves-effect waves-light" ng-click="ctrl.createJob()">Next</a>
+            <a ng-disabled="!ctrl.model.title && !ctrl.model.description" class="btn col s12 m6 offset-m3 waves-effect waves-light" ng-click="ctrl.createJob()">Next</a>
         </form>
     </div>
 </div>
