@@ -311,6 +311,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\swipe.png" />
     <Content Include="Content\showJob.html" />
     <Content Include="Content\createJob.html" />
     <Content Include="Content\intro.html" />
@@ -435,7 +436,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\images\" />
     <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
