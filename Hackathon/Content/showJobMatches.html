@@ -1,6 +1,7 @@
 ﻿<div ng-controller="showJobMatchesCtrl as ctrl">
     <div ng-if="ctrl.show">
-        <h2 class="header">Your matches</h2>
+        <h2 class="header center">Your matches</h2>
+        <p class="grey-text center text-darken-3 lighten-3">Look what we found. These are your matches.</p>
         <div class="row">
             <div class="col s12 m6" ng-repeat="match in ctrl.matches">
                 <div class="card horizontal">

@@ -1,5 +1,7 @@
 ﻿<div ng-controller="jobCtrl as ctrl">
     <form class="col s12" ng-if="ctrl.show">
+        <h2 class="header center">What kind?</h2>
+        <p class="grey-text center text-darken-3 lighten-3">Tell us what you kind of job you are looking for and we will find your perfect match.</p>
         <div class="row">
             <div class="input-field col s12">
                 <input ng-model="ctrl.model.jobSearch" id="occupation" type="text" class="validate">
@@ -37,6 +39,6 @@
                 <label>Region</label>
             </div>
         </div>-->
-        <a ng-if="ctrl.model.job" class="btn col s12 waves-effect waves-light" ng-click="ctrl.startFindSkills()">Find my dream job</a>
+        <a ng-if="ctrl.model.job" class="btn col s12 waves-effect waves-light" ng-click="ctrl.startFindSkills()">Next</a>
     </form>
 </div>
