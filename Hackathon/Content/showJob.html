@@ -14,10 +14,16 @@
             </div>
         </div>
         <h2 class="header center">Required skills</h2>
+
         <div class="row">
-            <ul class="col s12 m6 offset-m3">
-                <li ng-repeat="skill in ctrl.model.skills">{{skill.title}}</li>
-            </ul>
+            <div class="card">
+                <div class="card-content">
+                    <ul>
+                        <li ng-repeat="skill in ctrl.model.skills">{{skill.title}}</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
         <a class="btn col s12 m6 offset-m3 waves-effect waves-light" ng-click="ctrl.startFindSkills()">Find the perfect employee</a>
     </div>
