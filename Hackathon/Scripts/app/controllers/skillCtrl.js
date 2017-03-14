@@ -8,7 +8,7 @@
 
     vm.yes = function () {
         vm.model.skills.push(vm.currentSkill);
-        skillsService.post({ id: vm.currentSkill.id, title: vm.currentSkill.name, gotSkill: true });
+        skillsService.post({ skillId: vm.currentSkill.id, title: vm.currentSkill.name, gotSkill: true });
         vm.showNextSkill();
     }
 
@@ -25,14 +25,14 @@
     }
 
     vm.no = function () {
-        skillsService.post({ id: vm.currentSkill.id, title: vm.currentSkill.name, gotSkill: false });
+        skillsService.post({ skillId: vm.currentSkill.id, title: vm.currentSkill.name, gotSkill: false });
         vm.showNextSkill();
     }
 
     $scope.$on('showSkills',
         function (e, data) {
             vm.show = true;
-            skillsService.get(data.job.id).then(function (result) {
+            skillsService.get(data.job.isco).then(function (result) {
                 vm.model = result;
                 vm.model.skills = [];
                 vm.skills = result.data;

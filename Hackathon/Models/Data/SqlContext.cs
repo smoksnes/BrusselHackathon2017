@@ -5,7 +5,9 @@ namespace Hackathon.Web.Models.Data
 {
     public partial class SqlContext : DbContext
     {
-        public DbSet<SkillProfession> SkillProfessions { get; set; }
+        public DbSet<Occupation> Occupations { get; set; }
+        public DbSet<Skill> Skills { get; set; }
+        public DbSet<GenericSkill> GenericSkills { get; set; }
         public DbSet<SkillTracking> SkillTrackings { get; set; }
         // Unable to generate entity type for table 'dbo.ft_skill_profession_cz'. Please see the warning messages.
         // Unable to generate entity type for table 'dbo.out1'. Please see the warning messages.
@@ -38,12 +40,21 @@ namespace Hackathon.Web.Models.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<SkillProfession>()
-                .ToTable("ft_skill_profession_en")
-                .HasKey(x => x.GeneralId);
+            modelBuilder.Entity<Occupation>()
+                .ToTable("swe.occupations")
+                .HasKey(x => x.Id);
 
             modelBuilder.Entity<SkillTracking>()
-                .ToTable("skill_tracking");
+                .ToTable("swe.skill_tracking")
+                .HasKey(x => x.Id);
+
+            modelBuilder.Entity<Skill>()
+                .ToTable("swe.skills")
+                .HasKey(x => x.Id);
+
+            modelBuilder.Entity<GenericSkill>()
+                .ToTable("swe.generic_skills")
+                .HasKey(x => x.Id);
         }
     }
 }

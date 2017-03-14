@@ -5,6 +5,7 @@ namespace Hackathon.Web.Models.Data
     public class SkillTracking
     {
         public int Id { get; set; }
+        public int SkillId { get; set; }
         public string Title { get; set; }
         public DateTime Date { get; set; }
         public float Latitude { get; set; }

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Hackathon.Web.Models;
 using Hackathon.Web.Models.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Hackathon.Web.Controllers.Api
 {
@@ -12,50 +14,17 @@ namespace Hackathon.Web.Controllers.Api
     {
         private readonly SqlContext _dbContext;
 
-        private readonly Skill[] _skills = new[]
-        {
-            new Skill()
-            {
-                Id   = 1,
-                Title = "Skill 1",
-                Description = "Description 1. Enter some more texte here..."
-            },
-            new Skill()
-            {
-                Id   = 2,
-                Title = "Skill 2",
-                Description = "Description 1. Enter some more texte here..."
-            },
-            new Skill()
-            {
-                Id   = 3,
-                Title = "Skill 3",
-                Description = "Description 1. Enter some more texte here..."
-            },
-            new Skill()
-            {
-                Id   = 4,
-                Title = "Skill 4",
-                Description = "Description 1. Enter some more texte here..."
-            },
-            new Skill()
-            {
-                Id   = 5,
-                Title = "Skill 5",
-                Description = "Description 1. Enter some more texte here..."
-            },
-        };
-
         public SkillsController(SqlContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-        [Route("{jobId:int}")]
+        [Route("{isco:int}")]
         [HttpGet]
-        public IHttpActionResult Get(int jobId)
+        public async Task<IHttpActionResult> Get(int isco)
         {
-            return Ok(_skills);
+            var skills = await _dbContext.Skills.Where(x => x.Isco == isco).Take(10).ToListAsync();
+            return Ok(skills);
         }
 
         [Route("")]

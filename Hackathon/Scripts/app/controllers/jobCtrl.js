@@ -23,8 +23,6 @@
 
     vm.jobs = [];
 
-
-
     $scope.$watch(function () {
         return vm.model.jobSearch;
     },

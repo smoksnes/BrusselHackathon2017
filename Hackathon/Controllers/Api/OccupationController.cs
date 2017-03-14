@@ -46,9 +46,7 @@ namespace Hackathon.Web.Controllers.Api
         public async Task<IHttpActionResult> Get()
         {
             var jobs =
-                await _dbContext.SkillProfessions
-                   .GroupBy(x => new Job { Id = x.GeneralId, Title = x.Esco_Level_4 })
-                    .Select(g => g.First())
+                await _dbContext.Occupations
                     .Take(10)
                     .ToListAsync();
             return Ok(jobs);
@@ -58,16 +56,13 @@ namespace Hackathon.Web.Controllers.Api
         [HttpGet]
         public async Task<IHttpActionResult> Get(string title)
         {
-            return Ok(_jobs);
             var query =
-                 _dbContext.SkillProfessions
-                    .Where(x => x.Esco_Level_4.Contains(title))
-                    .Select(g => g.Esco_Level_4)
-                    .Distinct()
+                 _dbContext.Occupations
+                    .Where(x => x.Title.Contains(title))
                     .Take(10);
 
             var jobs = await query.ToListAsync();
-            return Ok(jobs.Select(x => new Job() { Title = x }));
+            return Ok(jobs);
         }
 
         protected override void Dispose(bool disposing)
